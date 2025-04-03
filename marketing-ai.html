@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing AI Agent | Volaris Enterprise</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enterprise.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .marketing-ai-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .ai-header {
+            background: linear-gradient(135deg, #7354E2 0%, #F5F6FC 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        .ai-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .ai-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .ai-frameworks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .framework-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .framework-card h3 {
+            color: #7354E2;
+            margin-bottom: 1rem;
+        }
+        .framework-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .framework-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .framework-card li:before {
+            content: "•";
+            color: #7354E2;
+            position: absolute;
+            left: 0;
+        }
+        .ai-input-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Manrope', sans-serif;
+        }
+        .input-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .ai-output-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .ai-output-section h2 {
+            color: #7354E2;
+            margin-bottom: 1rem;
+        }
+        .ai-output-content {
+            display: none;
+        }
+        .ai-output-content.active {
+            display: block;
+        }
+        .submit-button {
+            background: #7354E2;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .submit-button:hover {
+            background: #5A3FC3;
+        }
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .loading-spinner.active {
+            display: block;
+        }
+        .loading-spinner i {
+            font-size: 2rem;
+            color: #7354E2;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .strategy-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .strategy-section h3 {
+            color: #7354E2;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .funnel-stages, .scaling-phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .funnel-stage, .scaling-phase {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .funnel-stage h4, .scaling-phase h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .funnel-stage p, .scaling-phase p {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        .funnel-stage ul, .scaling-phase ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        .funnel-stage li, .scaling-phase li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .funnel-stage li:before, .scaling-phase li:before {
+            content: "•";
+            color: #7354E2;
+            position: absolute;
+            left: 0;
+        }
+        .error-message {
+            background: #fff3f3;
+            color: #dc3545;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .error-message i {
+            font-size: 1.5rem;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .radio-label, .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .radio-label:hover, .checkbox-label:hover {
+            background-color: #f5f6fc;
+        }
+        .radio-label input[type="radio"], 
+        .checkbox-label input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+        .radio-label span, .checkbox-label span {
+            flex: 1;
+        }
+        strong {
+            color: #7354E2;
+        }
+    </style>
+</head>
+<body>
+    <div class="marketing-ai-container">
+        <div class="ai-header">
+            <h1>Marketing AI Strategist</h1>
+            <p>Your enterprise-level AI marketing assistant for strategy, copy, and scaling</p>
+        </div>
+
+        <div class="ai-frameworks">
+            <div class="framework-card">
+                <h3>PAS Framework</h3>
+                <ul>
+                    <li>Problem</li>
+                    <li>Agitation</li>
+                    <li>Solution</li>
+                </ul>
+            </div>
+            <div class="framework-card">
+                <h3>AIDA Model</h3>
+                <ul>
+                    <li>Attention</li>
+                    <li>Interest</li>
+                    <li>Desire</li>
+                    <li>Action</li>
+                </ul>
+            </div>
+            <div class="framework-card">
+                <h3>Dream Outcome</h3>
+                <ul>
+                    <li>Current State</li>
+                    <li>Desired State</li>
+                    <li>Obstacles</li>
+                    <li>Solution Path</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ai-input-section">
+            <h2>Let's get your AI Marketing Agent fully configured</h2>
+            <form id="marketing-ai-form">
+                <div class="input-group">
+                    <label for="business-type">What is your <strong>business or offer</strong>?</label>
+                    <input type="text" id="business-type" required placeholder="e.g., course, eCom product, SaaS, coaching program, agency service">
+                </div>
+
+                <div class="input-group">
+                    <label for="ideal-customer">Who is your <strong>ideal customer</strong>?</label>
+                    <textarea id="ideal-customer" required placeholder="Describe demographics, pain points, and desires"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>Where are you currently?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="current-stage" value="idea" required>
+                            Idea stage (no traffic/sales yet)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="current-stage" value="early">
+                            Early traction (a few clients or purchases)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="current-stage" value="scaling">
+                            Scaling (making sales, now optimizing & growing)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>What platforms are you using or planning to use?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="platforms" value="tiktok">
+                            TikTok
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="platforms" value="instagram">
+                            Instagram
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="platforms" value="facebook">
+                            Facebook/Meta
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="platforms" value="youtube">
+                            YouTube
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="platforms" value="google">
+                            Google/SEO
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="platforms" value="email">
+                            Email/SMS
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="platforms" value="website">
+                            Website/Landing Pages
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>What would you like help with first?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="help-needed" value="offer">
+                            Clarifying my offer
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="help-needed" value="copy">
+                            Writing ad/email/landing page copy
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="help-needed" value="funnel">
+                            Planning a funnel or campaign
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="help-needed" value="audience">
+                            Understanding my target audience better
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="help-needed" value="scaling">
+                            Scaling something that's already working
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Generate Marketing Strategy</button>
+            </form>
+        </div>
+
+        <div class="loading-spinner">
+            <i class="fas fa-spinner"></i>
+        </div>
+
+        <div class="ai-output-section">
+            <h2>Your Marketing Strategy</h2>
+            <div class="ai-output-content">
+                <!-- AI output will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/marketing-ai.js"></script>
+</body>
+</html> 

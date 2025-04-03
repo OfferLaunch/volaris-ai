@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volaris.AI Enterprise - AI Agents Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enterprise.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="assets/asset 1.png" alt="Volaris.AI Logo" class="logo-image">
+            </div>
+            <div class="nav-links">
+                <a href="#agents">AI Agents</a>
+                <a href="#analytics">Analytics</a>
+                <a href="#settings">Settings</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="#" class="login-button">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="enterprise-main">
+        <section class="enterprise-hero">
+            <h1>Enterprise AI Agents</h1>
+            <p>Powerful AI agents designed for enterprise marketing and sales teams</p>
+        </section>
+
+        <section id="agents" class="agents-section">
+            <div class="agents-grid">
+                <div class="agent-card marketing">
+                    <div class="agent-header">
+                        <div class="agent-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h2>Marketing AI Agent</h2>
+                    </div>
+                    <div class="agent-features">
+                        <ul>
+                            <li>Content Generation & Optimization</li>
+                            <li>Social Media Management</li>
+                            <li>Email Campaign Automation</li>
+                            <li>SEO Analysis & Recommendations</li>
+                            <li>Competitor Analysis</li>
+                        </ul>
+                    </div>
+                    <div class="agent-status">
+                        <span class="status-indicator active"></span>
+                        <span>Active</span>
+                    </div>
+                    <button class="agent-button enterprise-cta">Configure Agent</button>
+                </div>
+
+                <div class="agent-card sales-agent">
+                    <div class="agent-header">
+                        <div class="agent-icon">
+                            <img src="assets/sales-icon.png" alt="Sales AI Icon">
+                        </div>
+                        <div class="agent-info">
+                            <h3>Sales AI Agent</h3>
+                            <span class="status active">Active</span>
+                        </div>
+                    </div>
+                    <div class="agent-description">
+                        <p>Your intelligent sales assistant that helps close deals and nurture leads</p>
+                    </div>
+                    <div class="agent-features">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li>
+                                <strong>Lead Qualification</strong>
+                                <p>Automatically qualifies leads based on behavior, engagement, and company data</p>
+                            </li>
+                            <li>
+                                <strong>Meeting Scheduling</strong>
+                                <p>Intelligent calendar management and meeting scheduling with prospects</p>
+                            </li>
+                            <li>
+                                <strong>Proposal Generation</strong>
+                                <p>Creates customized proposals based on prospect needs and company data</p>
+                            </li>
+                            <li>
+                                <strong>Follow-up Automation</strong>
+                                <p>Smart follow-up sequences based on prospect engagement</p>
+                            </li>
+                            <li>
+                                <strong>Sales Analytics</strong>
+                                <p>Real-time insights into pipeline health and deal progress</p>
+                            </li>
+                            <li>
+                                <strong>Competitive Intelligence</strong>
+                                <p>Monitors competitor activities and market trends</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="agent-interaction">
+                        <h4>Interactive Features</h4>
+                        <div class="interaction-options">
+                            <button class="interaction-btn" onclick="startSalesChat()">
+                                <i class="fas fa-comments"></i> Start Sales Chat
+                            </button>
+                            <button class="interaction-btn" onclick="generateProposal()">
+                                <i class="fas fa-file-alt"></i> Generate Proposal
+                            </button>
+                            <button class="interaction-btn" onclick="scheduleMeeting()">
+                                <i class="fas fa-calendar"></i> Schedule Meeting
+                            </button>
+                        </div>
+                    </div>
+                    <div class="agent-metrics">
+                        <h4>Performance Metrics</h4>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-value">98%</span>
+                                <span class="metric-label">Lead Response Rate</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">45%</span>
+                                <span class="metric-label">Conversion Rate</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">2.5x</span>
+                                <span class="metric-label">Deal Velocity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="agent-analytics">
+            <h2>Agent Performance Analytics</h2>
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>Marketing Agent</h3>
+                    <div class="metric">
+                        <span class="metric-value">92%</span>
+                        <span class="metric-label">Content Quality Score</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">1.2K</span>
+                        <span class="metric-label">Content Pieces Generated</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">45%</span>
+                        <span class="metric-label">Engagement Rate</span>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <h3>Sales Agent</h3>
+                    <div class="metric">
+                        <span class="metric-value">78%</span>
+                        <span class="metric-label">Lead Qualification Rate</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">2.5K</span>
+                        <span class="metric-label">Leads Processed</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">35%</span>
+                        <span class="metric-label">Conversion Rate</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-logo">Volaris.AI Enterprise</div>
+                <p class="footer-tagline">Enterprise AI Solutions</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Volaris.AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/marketing-ai.js"></script>
+    <script>
+    function startSalesChat() {
+        const chatWindow = document.createElement('div');
+        chatWindow.className = 'chat-window';
+        chatWindow.innerHTML = `
+            <div class="chat-header">
+                <h3>Sales Assistant Chat</h3>
+                <button onclick="this.parentElement.parentElement.remove()">×</button>
+            </div>
+            <div class="chat-messages">
+                <div class="message bot">
+                    Hello! I'm your Volaris.AI Sales Assistant. I can help you with:
+                    - Lead qualification
+                    - Meeting scheduling
+                    - Proposal generation
+                    - Sales analytics
+                    - Competitive intelligence
+                    How can I assist you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button onclick="sendMessage(this)">Send</button>
+            </div>
+        `;
+        document.body.appendChild(chatWindow);
+    }
+
+    function generateProposal() {
+        const proposalWindow = document.createElement('div');
+        proposalWindow.className = 'proposal-window';
+        proposalWindow.innerHTML = `
+            <div class="proposal-header">
+                <h3>Generate Sales Proposal</h3>
+                <button onclick="this.parentElement.parentElement.remove()">×</button>
+            </div>
+            <div class="proposal-form">
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" placeholder="Enter company name">
+                </div>
+                <div class="form-group">
+                    <label>Industry</label>
+                    <select>
+                        <option>Technology</option>
+                        <option>Healthcare</option>
+                        <option>Finance</option>
+                        <option>Manufacturing</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Budget Range</label>
+                    <select>
+                        <option>$10k - $50k</option>
+                        <option>$50k - $100k</option>
+                        <option>$100k+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Key Requirements</label>
+                    <textarea placeholder="Enter key requirements"></textarea>
+                </div>
+                <button onclick="generateProposalContent(this)">Generate Proposal</button>
+            </div>
+        `;
+        document.body.appendChild(proposalWindow);
+    }
+
+    function scheduleMeeting() {
+        const meetingWindow = document.createElement('div');
+        meetingWindow.className = 'meeting-window';
+        meetingWindow.innerHTML = `
+            <div class="meeting-header">
+                <h3>Schedule Sales Meeting</h3>
+                <button onclick="this.parentElement.parentElement.remove()">×</button>
+            </div>
+            <div class="meeting-form">
+                <div class="form-group">
+                    <label>Prospect Name</label>
+                    <input type="text" placeholder="Enter prospect name">
+                </div>
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" placeholder="Enter company name">
+                </div>
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date">
+                </div>
+                <div class="form-group">
+                    <label>Preferred Time</label>
+                    <input type="time">
+                </div>
+                <div class="form-group">
+                    <label>Meeting Type</label>
+                    <select>
+                        <option>Initial Consultation</option>
+                        <option>Product Demo</option>
+                        <option>Proposal Review</option>
+                        <option>Negotiation</option>
+                    </select>
+                </div>
+                <button onclick="scheduleMeetingSubmit(this)">Schedule Meeting</button>
+            </div>
+        `;
+        document.body.appendChild(meetingWindow);
+    }
+
+    function sendMessage(button) {
+        const input = button.parentElement.querySelector('input');
+        const message = input.value.trim();
+        if (message) {
+            const messagesDiv = button.parentElement.previousElementSibling;
+            messagesDiv.innerHTML += `
+                <div class="message user">${message}</div>
+                <div class="message bot">I understand you're interested in ${message}. Let me help you with that. Would you like to:
+                1. Schedule a detailed consultation?
+                2. Receive a customized proposal?
+                3. Learn more about our solutions?</div>
+            `;
+            input.value = '';
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    }
+
+    function generateProposalContent(button) {
+        const form = button.parentElement;
+        const companyName = form.querySelector('input[type="text"]').value;
+        const industry = form.querySelector('select').value;
+        const budget = form.querySelectorAll('select')[1].value;
+        const requirements = form.querySelector('textarea').value;
+
+        const proposalContent = `
+            <div class="proposal-content">
+                <h3>Proposal for ${companyName}</h3>
+                <div class="proposal-details">
+                    <p><strong>Industry:</strong> ${industry}</p>
+                    <p><strong>Budget Range:</strong> ${budget}</p>
+                    <p><strong>Requirements:</strong> ${requirements}</p>
+                </div>
+                <div class="proposal-packages">
+                    <h4>Recommended Package</h4>
+                    <p>Based on your requirements, we recommend our Enterprise Package which includes:</p>
+                    <ul>
+                        <li>Full AI Agent Suite</li>
+                        <li>Custom Integration</li>
+                        <li>24/7 Support</li>
+                        <li>Advanced Analytics</li>
+                    </ul>
+                </div>
+                <button onclick="downloadProposal()">Download Proposal</button>
+            </div>
+        `;
+        form.innerHTML = proposalContent;
+    }
+
+    function scheduleMeetingSubmit(button) {
+        const form = button.parentElement;
+        const prospectName = form.querySelector('input[type="text"]').value;
+        const company = form.querySelectorAll('input[type="text"]')[1].value;
+        const date = form.querySelector('input[type="date"]').value;
+        const time = form.querySelector('input[type="time"]').value;
+        const meetingType = form.querySelector('select').value;
+
+        const confirmation = `
+            <div class="meeting-confirmation">
+                <h3>Meeting Scheduled!</h3>
+                <div class="meeting-details">
+                    <p><strong>Prospect:</strong> ${prospectName}</p>
+                    <p><strong>Company:</strong> ${company}</p>
+                    <p><strong>Date:</strong> ${date}</p>
+                    <p><strong>Time:</strong> ${time}</p>
+                    <p><strong>Type:</strong> ${meetingType}</p>
+                </div>
+                <p>A calendar invitation has been sent to the prospect.</p>
+                <button onclick="this.parentElement.parentElement.remove()">Close</button>
+            </div>
+        `;
+        form.innerHTML = confirmation;
+    }
+
+    function downloadProposal() {
+        alert('Proposal downloaded successfully!');
+    }
+    </script>
+</body>
+</html> 
