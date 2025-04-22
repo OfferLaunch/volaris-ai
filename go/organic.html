@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volaris AI - Master AI Before It Masters You</title>
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const medium = urlParams.get('medium') || 'organic';
+        const campaign = urlParams.get('campaign') || 'default';
+        
+        // Redirect to main tracking page with source=organic
+        window.location.href = `index.html?source=organic&medium=${medium}&campaign=${campaign}`;
+    </script>
+</head>
+<body>
+    <p>Redirecting to Volaris AI...</p>
+</body>
+</html> 
